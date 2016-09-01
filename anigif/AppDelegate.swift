@@ -7,15 +7,33 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    //var backgroundTaskID : UIBackgroundTaskIdentifier = 0
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        FIRApp.configure()
+        
+        /*
+        let user = UserModel()
+        let userData = user.getUserData()
+        
+        print(userData)
+        
+        if userData["mid"] == nil {
+            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            let storyboard = UIStoryboard(name: "Login", bundle: nil)
+            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("LoginViewController")
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        }*/
+        
         return true
     }
 
@@ -27,6 +45,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        
+        /*
+         self.backgroundTaskID = application.beginBackgroundTaskWithExpirationHandler(){
+         [weak self] in
+         application.endBackgroundTask((self?.backgroundTaskID)!)
+         self?.backgroundTaskID = UIBackgroundTaskInvalid
+         }
+        */
     }
 
     func applicationWillEnterForeground(application: UIApplication) {

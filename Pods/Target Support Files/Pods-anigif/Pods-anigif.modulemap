@@ -1,0 +1,6 @@
+framework module Pods_anigif {
+  umbrella header "Pods-anigif-umbrella.h"
+
+  export *
+  module * { export * }
+}
